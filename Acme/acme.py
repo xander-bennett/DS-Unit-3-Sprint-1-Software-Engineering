@@ -1,6 +1,7 @@
 """Classes to represent products"""
 
 from random import random
+from random import randint
 import random
 
 class Product:
@@ -18,7 +19,7 @@ class Product:
         """Divides price by weight. Ratios return stealability strings """
         if (self.price / self.weight) < 0.5:
             print('Not so stealable...')
-        elif (self.price / self.wieght) >= 0.5 < 1.0:
+        elif (self.price / self.weight) >= 0.5 < 1.0:
             print('Kinda stealable.')
         else: print('Very stealable!')
 
@@ -32,8 +33,13 @@ class Product:
 
 class BoxingGlove(Product):
     """BoxingGlove Sublcass"""
-    def __init__(self, weight=10):
-        super().__init__(weight)
+    def __init__(self, name, price=10, weight=10, flammability=0.5,
+     identifier=randint(1000000, 9999999)):
+        self.name = name
+        self.price = price
+        self.weight = weight
+        self.flammability = flammability
+        self.identifier = identifier
 
     def explode(self):
         """Prints what will happen if the product is too flammable"""

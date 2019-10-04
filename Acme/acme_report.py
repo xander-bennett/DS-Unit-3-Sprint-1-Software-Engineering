@@ -6,40 +6,28 @@ from random import sample, randint, uniform
 ADJECTIVES = ['Awesome', 'Shiny', 'Impressive', 'Portable', 'Improved']
 NOUNS = ['Anvil', 'Catapult', 'Disguise', 'Mousetrap', '???']
 
+def generate_products(num_products=30):
+    """ Generate a list of ACME products """
+    products = []
+    for i in range(num_products):
+        name = ADJECTIVES[randint(0, 4)] + ' ' + NOUNS[randint(0, 4)]
+        price = randint(5, 100)
+        weight = randint(5, 100)
+        flammability = uniform(0, 2.5)
+        products.append(Product(name, price, weight, flammability))
+    return products
 
+def inventory_report(products):
+    """ Print a report for a list of products """
+    names = set(list(i.name for i in products))
+    avg_price = sum(i.price for i in products) / len(products)
+    avg_weight = sum(i.weight for i in products) / len(products)
+    avg_flammability = sum(i.flammability for i in products) / len(products)
+    print("ACME CORPORATION OFFICIAL INVENTORY REPORT\n")
+    print('Unique names - ', len(names))
+    print('Average weight - ', avg_weight)
+    print('Average price - ', avg_price)
+    print('Average flammability - ', avg_flammability)
 
-
-def __init__(self, num_product=30, products=None, products_set=None):
-    super().__init__()
-
-    self.num_product = num_product
-    self.products = products
-    self.products_set = products_set
-
-def generate_products(self,num_product=30):
-    """Random Generator of total product number"""
-    self.products = [' '.join(sample(ADJECTIVES, 1) + sample(NOUNS, 1))
-                    for _ in range(num_product)]
-    self.products_set = set(self.products)
-    self.products = len(self.products_set)
-
-    print("Unique product names:", self.products)
-
-    return
-
-def inventory_report(self, products):
-    """Average characteristics of listed products"""
-    avg_price = self.price / products
-    print('Average price:', avg_price)
-
-    avg_weight = self.weight / products
-    print('Average weight:', avg_weight)
-
-    avg_flammability = self.flammability / products
-    print('Average flammability:', avg_flammability)
-
-    return
-pass
-
-if __name__ == "__main__":
+if __name__ == '__main__':
     inventory_report(generate_products())
