@@ -264,9 +264,15 @@ career here, you'll have to answer the following:
 - What, in your opinion, is an important part of code reviews? That is, what is
   something you pay attention to when you review code, and that you appreciate
   when others do the same for your code?
+  
+  I think the most important part of a code review is that you decrease your technical debt.
+  IF someone does that, while making it more readable, those are the two things that matter most
+  
 - We have an awful lot of computers here, and it gets pretty confusing with
   slightly different things running on all of them. How could containers help us
   improve this situation?
+  
+  Switching betwen these virtual environments is easy with containers because they're all running on one host maching as opposed to several other virtual machines that are cumbersome to get in and out of.
 
 Answer both of these questions (baseline ~5 sentences) here in text.
 
