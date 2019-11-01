@@ -1,4 +1,3 @@
-@channel sorry for the delay technical difficulties. you have 15 extra mins to finish today. 
 ```
 Data Science Unit 3 Sprint Challenge 1
 Software Engineering - the Acme Way
