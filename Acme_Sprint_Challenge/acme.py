@@ -2,11 +2,12 @@
 
 import random
 
+
 class Product:
     """Acme Products"""
 
-    def __init__(self, name, price = 10, weight = 20, flammability = 0.5,
-    identifier = random.randint(1000000,9999999)):
+    def __init__(self, name, price=10, weight=20, flammability=0.5,
+                 identifier=random.randint(1000000, 9999999)):
         self.name = name
         self.price = price
         self.weight = weight
@@ -33,8 +34,10 @@ class Product:
         else:
             return "...BABMOOM!!"
 
+
 class BoxingGlove(Product):
     """Product sub-class"""
+
     def __init__(self, name, price=10, weight=10, flammability=0.5):
         super().__init__(name, price, weight, flammability)
 

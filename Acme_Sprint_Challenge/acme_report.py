@@ -9,12 +9,12 @@ NOUNS = ['Anvil', 'Catapult', 'Disguise', 'Mousetrap', '???']
 def generate_products(num_products=30):
     products = []
     for i in range(num_products):
-        name = ADJECTIVES[randint(0, 4)] + ' '  + NOUNS[randint(0,4)]
+        name = ADJECTIVES[randint(0, 4)] + ' ' + NOUNS[randint(0, 4)]
         price = randint(5, 100)
         weight = randint(5, 100)
         flammability = uniform(0, 2.5)
         products.append(Product(name, price=price, weight=weight,
-        flammability=flammability))
+                                flammability=flammability))
     return products
 
 
@@ -35,6 +35,7 @@ def inventory_report(products):
     print("Average weight: {}".format(total_weight / len(products)))
     print("Average flammability: {}".format(
         total_flammability / len(products)))
+
 
 if __name__ == '__main__':
     inventory_report(generate_products())
