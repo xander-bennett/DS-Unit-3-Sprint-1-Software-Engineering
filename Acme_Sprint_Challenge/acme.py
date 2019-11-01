@@ -22,3 +22,13 @@ class Product:
             return "Kinda stealable."
         else:
             return "Very Stealable!"
+
+    def explode(self):
+        """Returns explodability by multiplying flammability by weight"""
+        calculation = self.flammability * self.weight
+        if calculation < 10:
+            return "...fizzle."
+        elif calculation >= 10 and calculation < 50:
+            return "..boom!"
+        else:
+            return "...BABMOOM!!"
